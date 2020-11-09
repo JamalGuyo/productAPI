@@ -37,3 +37,12 @@ exports.updateProduct = async(req, res) => {
         res.send(error);
     }
 }
+
+exports.deleteProduct = async(req, res) => {
+    try{
+        await db.Product.findByIdAndDelete(req.params.productID);
+        res.json({message: 'product deleted'})
+    }catch(error){
+        console.log(error);
+    }
+}
