@@ -8,3 +8,12 @@ exports.getProducts = async(req, res) => {
         res.send(error);
     }
 }
+
+exports.createProduct = async(req, res) => {
+    try{
+        const product = await db.Product.create(req.body);
+        res.status(201).json(product);
+    }catch(error){
+        res.send(error);
+    }
+}
