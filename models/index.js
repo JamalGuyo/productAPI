@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost:27017/productdb',{
     useUnifiedTopology: true,
     useFindAndModify: false
 })
-hen(() => console.log(`connected successfully to productdb database`))
+.then(() => console.log(`connected successfully to productdb database`))
 .catch(error => console.log(error));
 // mongoose configs
 mongoose.set('debug', true);
