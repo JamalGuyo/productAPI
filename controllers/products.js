@@ -17,3 +17,13 @@ exports.createProduct = async(req, res) => {
         res.send(error);
     }
 }
+
+exports.getProduct = async(req, res) => {
+    try{
+        const {productID} = req.params;
+        const product = await db.Product.findById(productID);
+        res.json(product);
+    }catch(error){
+        res.status(404).send(error);
+    }
+}
