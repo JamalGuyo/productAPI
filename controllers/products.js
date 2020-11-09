@@ -27,3 +27,13 @@ exports.getProduct = async(req, res) => {
         res.status(404).send(error);
     }
 }
+
+exports.updateProduct = async(req, res) => {
+    try{
+        const {productID} = req.params;
+        const product = await db.Product.findByIdAndUpdate(productID, req.body, {new: true});
+        res.json(product);
+    }catch(error){
+        res.send(error);
+    }
+}

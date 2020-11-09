@@ -9,6 +9,7 @@ router.route('/')
 
 router.route('/:productID')
 .get(pController.getProduct)
+.put(pController.updateProduct)
 
 // EXPORT ROUTES
 module.exports = router;
