@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require('../databases/mongodb');
 // Product logic
 exports.getProducts = async(req, res) => {
     try{
